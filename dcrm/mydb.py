@@ -1,4 +1,4 @@
- 
+ #This python file is what I used to connect mysql to my project
 import mysql.connector
 
 dataBase = mysql.connector.connect(
