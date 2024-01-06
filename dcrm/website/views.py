@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .forms import SignUpForm
 
 def home(request):
     if request.method == "POST":
@@ -23,6 +24,16 @@ def logout_user(request):
     return redirect('home')
 
 def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            #Authenticate and Login User
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            messages.success(request, "You have successfully Registered! Welcome")
     return render(request, 'register.html')
     
 
