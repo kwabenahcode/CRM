@@ -42,5 +42,8 @@ def register(request):
         return render(request, 'register.html', {'form': form})
     
     return render(request, 'register.html', {'form': form})
+
+def customer_record(self, pk):
+    
     
 
