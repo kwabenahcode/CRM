@@ -43,7 +43,10 @@ def register(request):
     
     return render(request, 'register.html', {'form': form})
 
-def customer_record(self, pk):
+def customer_record(request, pk):
+    if request.user.is_authenticated:
+        #see records
+        check_records = Record()
     
     
 
