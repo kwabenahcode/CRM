@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Customer Record</h1>
+<div class="card">
+    <div class="card-header">
+        {{ customer_record.first_name }} {{ customer_record.last_name }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+{{customer_record.id}}
+
+{{ customer_record.email }}
+{{ customer_record.phone }}
+{{ customer_record.address }}
+{{ customer_record.city }}
+{{customer_record.state}}
+{{ customer_record.zipcode }}
+{{customer_record.created_at}}
+
 {% endblock %}
